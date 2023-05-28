@@ -1,7 +1,7 @@
 from flask import Flask, request
 
-from quran_chatgpt.helper.conversation import create_conversation
-from quran_chatgpt.helper.twilio_api import send_message
+from document_gpt.helper.conversation import create_conversation
+from document_gpt.helper.twilio_api import send_message
 
 qa = create_conversation()
 
