@@ -13,19 +13,22 @@ def home():
 
 @app.route('/twilio', methods=['POST'])
 def twilio():
-    print(request.form.to_dict())
     query = request.form['Body']
     sender_id = request.form['From']
+    print(sender_id, query)
     # TODO
     # get the user
     # if not create
     # create chat_history from the previous conversations
+    # quetion and answer
     res = qa(
         {
         'question': query,
         'chat_history': {}
         }
     )
+
+    print(res)
     
     send_message(sender_id, res['answer'])
 
